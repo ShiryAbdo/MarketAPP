@@ -1,33 +1,23 @@
 package com.example.shaymaa.disegnnew;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
-import android.support.v7.graphics.Palette;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.view.Gravity;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
 
 import static android.view.Gravity.LEFT;
-import static android.view.Gravity.RIGHT;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,7 +25,7 @@ public class MainActivity extends AppCompatActivity
     Toolbar toolbar;
     CollapsingToolbarLayout collapsingToolbarLayout = null;
     SearchView sv;
-    private GridLayoutManager lLayout;
+    private GridLayoutManager lLayout ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +37,8 @@ public class MainActivity extends AppCompatActivity
 
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
 
-//        dynamicToolbarColor();
 
-//        toolbarTextAppernce();
-
-
-
-        lLayout = new GridLayoutManager(MainActivity.this, 3);
+        lLayout = new GridLayoutManager(MainActivity.this, 2);
 
         sv= (SearchView) findViewById(R.id.mSearch);
         sv.setGravity(LEFT);
@@ -62,7 +47,12 @@ public class MainActivity extends AppCompatActivity
          RecyclerView rv= (RecyclerView) findViewById(R.id.myRecycler);
         //SET ITS PROPETRIES
         rv.setHasFixedSize(true);
-        rv.setLayoutManager(  new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rv.setLayoutManager(linearLayoutManager);
+//        rv.setLayoutManager(  new LinearLayoutManager(this, LinearLayoutManager. HORIZONTAL, true));
+//         rv.setLayoutManager(layout);
         rv.setItemAnimator(new DefaultItemAnimator());
 
 
@@ -107,40 +97,74 @@ public class MainActivity extends AppCompatActivity
     }
 
     //ADD PLAYERS TO ARRAYLIST
-    private ArrayList<Player> getPlayers()
+    private ArrayList<Products> getPlayers()
     {
-        ArrayList<Player> players=new ArrayList<>();
-        Player p=new Player();
-        p.setName("Ander Herera");
-        p.setPos("Midfielder");
-        p.setImg(R.drawable. girla);
-        players.add(p);
-        p=new Player();
-        p.setName("David De Geaa");
-        p.setPos("34");
-        p.setImg(R.drawable. girlb);
-        players.add(p);
-        p=new Player();
-        p.setName("Michael Carrick");
-        p.setPos("45");
-        p.setImg(R.drawable. girlc);
-        players.add(p);
-        p=new Player();
-        p.setName("Juan Mata");
-        p.setPos("67");
-        p.setImg(R.drawable. girld);
-        players.add(p);
-        p=new Player();
-        p.setName("Diego Costa");
-        p.setPos("77");
-        p.setImg(R.drawable.girle);
-        players.add(p);
-        p=new Player();
-        p.setName("Oscar");
+        ArrayList<Products> productses =new ArrayList<>();
+        Products p=new Products();
+        p.setName( "كوكا كولا");
         p.setPos("56");
-        p.setImg(R.drawable.girlf);
-        players.add(p);
-        return players;
+        p.setImg(R.drawable.mm);
+        productses.add(p);
+        p=new Products();
+        p.setName("شبسي");
+        p.setPos("34");
+        p.setImg(R.drawable.nn);
+        productses.add(p);
+        p=new Products();
+        p.setName("بسيلاء");
+        p.setPos("45");
+        p.setImg(R.drawable.pr);
+        productses.add(p);
+        p=new Products();
+        p.setName("لحوم");
+        p.setPos("67");
+        p.setImg(R.drawable.  ww);
+        productses.add(p);
+        p=new Products();
+        p.setName("تونه");
+        p.setPos("77");
+        p.setImg(R.drawable. nn);
+        productses.add(p);
+        p=new Products();
+        p.setName("سمك");
+        p.setPos("56");
+        p.setImg(R.drawable.mm);
+        productses.add(p);
+
+
+        Products n=new Products();
+        n.setName("كوفي");
+        n.setPos("34");
+        n.setImg(R.drawable.  nn);
+        productses.add(n);
+
+
+        Products jj=new Products();
+        jj.setName(" عصائر");
+        jj.setPos(" 89");
+        jj.setImg(R.drawable. ww);
+        productses.add(jj);
+
+        Products w=new Products();
+        w.setName("أرز");
+        w.setPos("89");
+        w.setImg(R.drawable.  pr);
+        productses.add(w);
+
+
+        Products u=new Products();
+        u.setName(" سكر");
+        u.setPos(" 678");
+        u.setImg(R.drawable.mm);
+        productses.add(u);
+
+
+        Products k=new Products();
+        k.setName("طماطم");
+        k.setPos(" 567");
+        p.setImg(R.drawable.  pr);
+        productses.add(k);
+        return productses;
     }
 
 
@@ -153,11 +177,11 @@ public class MainActivity extends AppCompatActivity
         ArrayList<SingleItemModel>  names =new ArrayList<>();
         SingleItemModel p=new SingleItemModel();
         p.setName("مشروبات ");
-        p.setImg(R.drawable.peach);
+        p.setImg(R.drawable.mmmm);
         names.add(p);
         SingleItemModel n=new SingleItemModel();
-        n.setName("خضروات");
-        n.setImg(R.drawable.peach);
+        n.setName("فواكهه  و خضروات طازجه");
+        n.setImg(R.drawable. vegetables);
         names.add(n);
 
         SingleItemModel k=new SingleItemModel();
@@ -174,6 +198,25 @@ public class MainActivity extends AppCompatActivity
         mm.setName("طازج");
         mm.setImg(R.drawable.peach);
         names.add(mm);
+
+        SingleItemModel nn=new SingleItemModel();
+         nn.setName(" مجمدات");
+         nn.setImg(R.drawable.peach);
+        names.add(nn);
+
+        SingleItemModel gg=new SingleItemModel();
+         gg.setName("الصلطات  والحبوب والزيت ");
+        gg.setImg(R.drawable.peach);
+        names.add(gg);
+        SingleItemModel vv=new SingleItemModel();
+        vv.setName(" احتاجات المنزل  والنظافه");
+        vv.setImg(R.drawable.peach);
+        names.add(m);
+
+        SingleItemModel  ff=new SingleItemModel();
+        ff.setName("احتياجات الطفل");
+        ff.setImg(R.drawable.peach);
+        names.add(ff);
 
         return  names;
     }

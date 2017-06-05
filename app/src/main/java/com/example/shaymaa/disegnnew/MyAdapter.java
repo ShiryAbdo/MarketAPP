@@ -17,13 +17,13 @@ import java.util.ArrayList;
 
 public class MyAdapter  extends RecyclerView.Adapter<MyHolder> implements Filterable {
     Context c;
-    ArrayList<Player> players,filterList;
+    ArrayList<Products> productses,filterList;
     CustomFilter filter;
-    public MyAdapter(Context ctx,ArrayList<Player> players)
+    public MyAdapter(Context ctx,ArrayList<Products> productses)
     {
         this.c=ctx;
-        this.players=players;
-        this.filterList=players;
+        this.productses = productses;
+        this.filterList= productses;
     }
     @Override
     public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -37,21 +37,21 @@ public class MyAdapter  extends RecyclerView.Adapter<MyHolder> implements Filter
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
         //BIND DATA
-        holder.posTxt.setText("$"+players.get(position).getPos());
-        holder.nameTxt.setText(players.get(position).getName());
-        holder.img.setImageResource(players.get(position).getImg());
+        holder.posTxt.setText("$"+ productses.get(position).getPos());
+        holder.nameTxt.setText(productses.get(position).getName());
+        holder.img.setImageResource(productses.get(position).getImg());
         //IMPLEMENT CLICK LISTENET
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onItemClick(View v, int pos) {
-                Snackbar.make(v,players.get(pos).getName(), Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(v, productses.get(pos).getName(), Snackbar.LENGTH_SHORT).show();
             }
         });
     }
     //GET TOTAL NUM OF PLAYERS
     @Override
     public int getItemCount() {
-        return players.size();
+        return productses.size();
     }
     //RETURN FILTER OBJ
     @Override

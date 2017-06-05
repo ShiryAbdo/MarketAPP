@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 public class CustomFilter  extends Filter{
     MyAdapter adapter;
-    ArrayList<Player> filterList;
-    public CustomFilter(ArrayList<Player> filterList,MyAdapter adapter)
+    ArrayList<Products> filterList;
+    public CustomFilter(ArrayList<Products> filterList, MyAdapter adapter)
     {
         this.adapter=adapter;
         this.filterList=filterList;
@@ -26,18 +26,18 @@ public class CustomFilter  extends Filter{
             //CHANGE TO UPPER
             constraint=constraint.toString().toUpperCase();
             //STORE OUR FILTERED PLAYERS
-            ArrayList<Player> filteredPlayers=new ArrayList<>();
+            ArrayList<Products> filteredProductses =new ArrayList<>();
             for (int i=0;i<filterList.size();i++)
             {
                 //CHECK
                 if(filterList.get(i).getName().toUpperCase().contains(constraint))
                 {
                     //ADD PLAYER TO FILTERED PLAYERS
-                    filteredPlayers.add(filterList.get(i));
+                    filteredProductses.add(filterList.get(i));
                 }
             }
-            results.count=filteredPlayers.size();
-            results.values=filteredPlayers;
+            results.count= filteredProductses.size();
+            results.values= filteredProductses;
         }else
         {
             results.count=filterList.size();
@@ -47,7 +47,7 @@ public class CustomFilter  extends Filter{
     }
     @Override
     protected void publishResults(CharSequence constraint, Filter.FilterResults results) {
-        adapter.players= (ArrayList<Player>) results.values;
+        adapter.productses = (ArrayList<Products>) results.values;
         //REFRESH
         adapter.notifyDataSetChanged();
     }

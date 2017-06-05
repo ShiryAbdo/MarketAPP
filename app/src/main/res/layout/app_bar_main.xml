@@ -9,6 +9,7 @@
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
+        android:id="@+id/app_bar"
         android:layout_height="250dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -39,80 +40,6 @@
 
 
 
-                <!--<LinearLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:orientation="horizontal">-->
-
-
-
-                    <!--<LinearLayout-->
-                        <!--android:layout_weight="1"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:orientation="horizontal">-->
-
-
-
-                    <!--</LinearLayout>-->
-
-
-
-
-
-                    <!--<LinearLayout-->
-                        <!--android:layout_weight="4"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:orientation="horizontal">-->
-
-                        <!--<LinearLayout-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="match_parent"-->
-                            <!--android:orientation="horizontal">-->
-
-                            <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
-
-                                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
-                                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
-                                <!--&lt;!&ndash;android:src="@drawable/heart"&ndash;&gt;-->
-
-
-                                <!--&lt;!&ndash;/>&ndash;&gt;-->
-                            <!--<android.support.v7.widget.SearchView-->
-
-                                <!--android:id="@+id/mSearch"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--app:submitBackground="@color/text_primary"-->
-                                <!--android:layout_height="wrap_content"-->
-                                <!--app:defaultQueryHint="Search.."-->
-                                <!--&gt;</android.support.v7.widget.SearchView>-->
-                        <!--</LinearLayout>-->
-
-
-                        <!--<LinearLayout-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="match_parent"-->
-                            <!--android:orientation="horizontal">-->
-
-
-                            <!--<ImageView-->
-                                <!--android:padding="10dp"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="wrap_content"-->
-                                <!--android:src="@drawable/cart"-->
-                                <!--/>-->
-                        <!--</LinearLayout>-->
-
-
-
-
-                    <!--</LinearLayout>-->
-
-                <!--</LinearLayout>-->
-
                     <LinearLayout
                         android:layout_weight="4"
                         android:layout_width="match_parent"
@@ -124,15 +51,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
-                            <android.support.v7.widget.SearchView
-                                android:id="@+id/mSearch"
-                                app:paddingEnd="@dimen/activity_horizontal_margin"
-                                android:textAlignment="viewStart"
-                                android:layout_width="match_parent"
-                                app:submitBackground="@color/text_primary"
-                                 android:layout_height="wrap_content"
-                                app:defaultQueryHint="Search.."
-                                 ></android.support.v7.widget.SearchView>
+
 
 
                         </LinearLayout>
@@ -150,8 +69,7 @@
                                 android:padding="10dp"
                                  android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/cart"
-                                />
+                                android:src="@drawable/cart"/>
                         </LinearLayout>
 
 
@@ -168,6 +86,44 @@
 
 
     <include layout="@layout/content_main" />
+
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/fab"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|end"-->
+        <!--android:layout_margin="@dimen/fab_margin"-->
+        <!--app:srcCompat="@android:drawable/ic_dialog_email" />-->
+
+
+    <LinearLayout
+        android:id="@+id/fab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="#fff"
+        app:layout_anchor="@id/app_bar"
+        app:layout_collapseMode="pin"
+        app:layout_anchorGravity="bottom|center"
+        android:orientation="horizontal">
+        <android.support.v7.widget.SearchView
+            android:id="@+id/mSearch"
+            app:paddingEnd="@dimen/activity_horizontal_margin"
+            android:textAlignment="viewStart"
+            android:layout_width="match_parent"
+            app:submitBackground="@color/text_primary"
+            android:layout_height="wrap_content"
+            app:defaultQueryHint="Search.."
+            ></android.support.v7.widget.SearchView>
+
+
+        <ImageView
+            android:layout_margin="10dp"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cart"/>
+    </LinearLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

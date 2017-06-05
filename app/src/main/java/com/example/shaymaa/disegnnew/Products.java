@@ -4,7 +4,7 @@ package com.example.shaymaa.disegnnew;
  * Created by Shaymaa on 5/28/2017.
  */
 
-public class Player {
+public class Products {
 
     private String name;
     private String pos;
