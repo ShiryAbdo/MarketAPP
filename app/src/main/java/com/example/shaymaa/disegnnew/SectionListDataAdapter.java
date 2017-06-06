@@ -11,9 +11,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-/**
- * Created by Shaymaa on 5/25/2017.
- */
 
 public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListDataAdapter.SingleItemRowHolder> {
 

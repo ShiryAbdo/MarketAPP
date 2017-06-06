@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity
     Toolbar toolbar;
     CollapsingToolbarLayout collapsingToolbarLayout = null;
     SearchView sv;
-    private GridLayoutManager lLayout ;
+    private GridLayoutManager lLayout ,layoutManager ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity
 
 
         lLayout = new GridLayoutManager(MainActivity.this, 2);
+        layoutManager = new GridLayoutManager(MainActivity.this, 4);
 
         sv= (SearchView) findViewById(R.id.mSearch);
-        sv.setGravity(LEFT);
 
 
          RecyclerView rv= (RecyclerView) findViewById(R.id.myRecycler);
@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity
         rv.setHasFixedSize(true);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        rv.setLayoutManager(linearLayoutManager);
+//        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+//        rv.setLayoutManager(linearLayoutManager);
 //        rv.setLayoutManager(  new LinearLayoutManager(this, LinearLayoutManager. HORIZONTAL, true));
-//         rv.setLayoutManager(layout);
+         rv.setLayoutManager(layoutManager);
         rv.setItemAnimator(new DefaultItemAnimator());
 
 
@@ -159,11 +159,7 @@ public class MainActivity extends AppCompatActivity
         productses.add(u);
 
 
-        Products k=new Products();
-        k.setName("طماطم");
-        k.setPos(" 567");
-        p.setImg(R.drawable.  pr);
-        productses.add(k);
+
         return productses;
     }
 
@@ -180,42 +176,42 @@ public class MainActivity extends AppCompatActivity
         p.setImg(R.drawable.mmmm);
         names.add(p);
         SingleItemModel n=new SingleItemModel();
-        n.setName("فواكهه  و خضروات طازجه");
+        n.setName("فواكهه  و خضروات ");
         n.setImg(R.drawable. vegetables);
         names.add(n);
 
         SingleItemModel k=new SingleItemModel();
          k.setName("فاكهه");
-        k.setImg(R.drawable.peach);
+        k.setImg(R.drawable.nnnn);
         names.add(k);
 
         SingleItemModel m=new SingleItemModel();
         m.setName("مشروبات");
-        m.setImg(R.drawable.peach);
+        m.setImg(R.drawable. imgthing);
         names.add(m);
 
         SingleItemModel mm=new SingleItemModel();
         mm.setName("طازج");
-        mm.setImg(R.drawable.peach);
+        mm.setImg(R.drawable.imgthingg);
         names.add(mm);
 
         SingleItemModel nn=new SingleItemModel();
          nn.setName(" مجمدات");
-         nn.setImg(R.drawable.peach);
+         nn.setImg(R.drawable.nnnn);
         names.add(nn);
 
         SingleItemModel gg=new SingleItemModel();
          gg.setName("الصلطات  والحبوب والزيت ");
-        gg.setImg(R.drawable.peach);
+        gg.setImg(R.drawable.imagess);
         names.add(gg);
         SingleItemModel vv=new SingleItemModel();
         vv.setName(" احتاجات المنزل  والنظافه");
-        vv.setImg(R.drawable.peach);
-        names.add(m);
+        vv.setImg(R.drawable.imagessd);
+        names.add(vv);
 
         SingleItemModel  ff=new SingleItemModel();
         ff.setName("احتياجات الطفل");
-        ff.setImg(R.drawable.peach);
+        ff.setImg(R.drawable.nnnn);
         names.add(ff);
 
         return  names;

@@ -4,9 +4,7 @@ import android.widget.Filter;
 
 import java.util.ArrayList;
 
-/**
- * Created by Shaymaa on 5/28/2017.
- */
+
 
 public class CustomFilter  extends Filter{
     MyAdapter adapter;

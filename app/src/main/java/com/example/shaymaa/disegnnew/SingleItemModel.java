@@ -1,8 +1,6 @@
 package com.example.shaymaa.disegnnew;
 
-/**
- * Created by Shaymaa on 5/25/2017.
- */
+
 
 public class SingleItemModel {
     private String name;

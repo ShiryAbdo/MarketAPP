@@ -5,9 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by Shaymaa on 5/28/2017.
- */
+
 
 public class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     //OUR VIEWS
